@@ -33,6 +33,8 @@
 
 <script>
 
+import axios from 'axios';
+
 export default {
   name: 'home',
   data: function () {
@@ -44,8 +46,18 @@ export default {
   	}
   },
   methods: {
-  	sendData() {
-  	  console.log(this.name, this.email, this.address, this.gender);
+  	async sendData() {
+  	  await axios ({
+        url: 'http://localhost:4000/api/records',
+        method: 'post',
+        data: {
+          name: this.name,
+          email: this.email,
+          address: this.address,
+          gender: this.gender
+        }
+        });
+      this.$router.push('thanks');
   	}
   }
 }
