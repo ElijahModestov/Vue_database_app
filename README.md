@@ -15,6 +15,11 @@ npm run serve
 npm run build
 ```
 
+### Run server to use database
+```
+npm run server
+```
+
 ### Run your tests
 ```
 npm run test
