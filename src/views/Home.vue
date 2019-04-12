@@ -111,7 +111,7 @@ export default {
   top: -100%;
   transform: translate(-50%);
   animation-name: home;
-  animation-duration: .5s;
+  animation-duration: 1s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
