@@ -16,6 +16,9 @@ export default new Router({
       path: '/thanks',
       name: 'thanks',
       component: Thanks
-    }
+    },
+      path: '/data',
+      name: 'data',
+      component: DataList
   ]
 })
