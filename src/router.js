@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Thanks from './views/Thanks.vue'
+import DataList from './views/DataList.vue'
 
 Vue.use(Router)
 
@@ -17,8 +18,10 @@ export default new Router({
       name: 'thanks',
       component: Thanks
     },
+    {
       path: '/data',
       name: 'data',
       component: DataList
+    }
   ]
 })

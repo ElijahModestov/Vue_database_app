@@ -26,6 +26,12 @@
       	</md-table-body>
       </md-table>
     </div>
+    <div class="error-block" v-else>
+      <md-card class="md-warn">
+        <md-card-content>
+          <h1 class="arror-view">DataBase Error</h1>
+        </md-card-content>
+    </div>
   </div>
 </template>
 
@@ -52,4 +58,28 @@
 	.error-view {
 		text-align: center;
 	}
+
 </style>
+
+<script>
+  import axios from 'axios';
+  export default {
+    name: 'data',
+    data: function () {
+      return {
+        dataList: [],
+        isError: false
+      };
+    },
+    methods: {
+      async getDataList() {
+        try {
+          let response = await axios.get('http://localhost:4000/api/records');
+          this.dataList = response.data;
+        } catch (error) {
+          this.isError = true;
+        }
+      }
+    }
+  }
+</script>
